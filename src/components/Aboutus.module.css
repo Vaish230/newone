@@ -1,0 +1,163 @@
+.aboutBMC {
+  background-color: #fff;
+  color: #111;
+  font-family: "D-DIN", "DIN", "Arial", sans-serif;
+  padding: 100px 60px 80px;
+}
+
+/* ===== TITLE ===== */
+.aboutus {
+  width: 100%;
+  font-size: 3.2rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+/* ===== TEXT ===== */
+.text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* ===== LIST ===== */
+.list {
+  margin-top: 20px;
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+/* ===== IMAGE ===== */
+.imageWrapper {
+  flex: 1;
+  min-width: 280px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== SVG ===== */
+.aboutText {
+  max-width: 920px;
+
+  font-family: "D-DIN", "DIN", "Arial", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  text-align: justify;
+  text-justify: inter-word;
+
+  word-spacing: 0.04em;
+  letter-spacing: 0.02em;
+}
+
+/* Inline emphasis — NOT block */
+.aboutText strong {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* SVG base */
+.arrowCircle {
+  fill: red;
+  transition: fill 0.3s ease;
+}
+
+.arrowIcon {
+  fill: #f0f0fae6;
+  transition: transform 0.3s ease;
+}
+
+.aboutusLink:hover .arrowCircle {
+  fill: #8b0000; /* dark red */
+}
+
+.aboutusLink:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* ===== MANIFESTO ===== */
+.aboutSection {
+  width: 100%;
+  padding: 70px 20px 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.aboutText strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.aboutSection::before {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+}
+
+.aboutText {
+  max-width: 880px;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 1.85;
+  font-weight: 400;
+  color: #333;
+}
+
+.imageWrapper img {
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper img:hover {
+  transform: scale(1.03);
+}
+
+.aboutusLink {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.aboutus {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: black;
+  cursor: default;
+}

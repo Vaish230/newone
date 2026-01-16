@@ -1,0 +1,80 @@
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import CroppedImage from "../assets/CroppedImage.png";
+import styles from "./SecNavbar.module.css";
+
+function SecNavbar() {
+  const location = useLocation();
+
+  const [hideHeader, setHideHeader] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const lastScrollY = useRef(0);
+
+  const routeLabels = {
+    "/live-space": "Live Space",
+    "/space-events": "Space Events",
+    "/missions": "Missions",
+    "/cosmic-activity": "Cosmic Activity",
+    "/space-for-earth": "Space for Earth",
+    "/event": "Event",
+    "/about-us": "About Us",
+    "/whats-up": "what's Up",
+    "/explore-tab": "Explore tab",
+    "/feature-news": "Feature news",
+    "/feature-blogs": "Feature blogs",
+    "/join-page": "Join page",
+    "/image-of-day": "Image of day",
+    "/learn-more": "Learn more",
+    "/games": "Games",
+    "/infographics": "Infographics",
+  };
+
+  const currentLabel = routeLabels[location.pathname] || "Live Space";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      // background control
+      setScrolled(currentScroll > 40);
+
+      // hide / show logic
+      if (currentScroll > lastScrollY.current && currentScroll > 80) {
+        setHideHeader(true); // scrolling down
+      } else {
+        setHideHeader(false); // scrolling up
+      }
+
+      lastScrollY.current = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`${styles.header} 
+        ${hideHeader ? styles.hide : ""} 
+        ${scrolled ? styles.scrolled : ""}
+      `}
+    >
+      <div className={styles.left}>
+        <Link to="/" className={styles.logoLink}>
+          <img
+            src={CroppedImage}
+            alt="SpaceX Logo"
+            className={styles.spacexLogo}
+          />
+        </Link>
+
+        <nav className={styles.nav}>
+          <span className={styles.activeLabel}>{currentLabel}</span>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export default SecNavbar;
