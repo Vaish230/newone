@@ -1,4 +1,4 @@
-import styles from "./DashBoard.module.css";
+import styles from "./Dashboard.module.css";
 
 import NotDeveloped from "./Notdeveloped";
 
@@ -65,8 +65,8 @@ export default function DashBoard() {
     activeTab === "space"
       ? spaceEvents
       : activeTab === "cosmic"
-      ? cosmicEvents
-      : [];
+        ? cosmicEvents
+        : [];
 
   return (
     <section className={styles.page}>
